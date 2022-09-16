@@ -79,4 +79,5 @@ function getMessages() {
 
 function postMessages(message) {
     $.post('http://localhost:3001/messages', message)
+    console.log(message)
 }
