@@ -33,7 +33,7 @@ app.post('/messages', (req, res) => {
 
     messages.save((err) =>{
         if(err){
-            sendStatus(500)
+            res.sendStatus(500)
         }
 
         io.emit('message', req.body)
