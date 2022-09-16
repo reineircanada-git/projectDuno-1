@@ -28,7 +28,7 @@ app.get('/messages', (req, res) => {
 })
 
 //Saves a message to the DB
-app.post('/messages', (req, res) => {
+app.post('http://0.0.0.0/messages', (req, res) => {
     var messages = new Message (req.body)
 
     messages.save((err) =>{
