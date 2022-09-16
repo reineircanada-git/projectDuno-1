@@ -20,7 +20,7 @@ var Message = mongoose.model('Message', {
 })
 
 //gets all the messages from the DB
-app.get('http://0.0.0.0/messages', (req, res) => {
+app.get('/messages', (req, res) => {
     Message.find({motType: { $ne: null }},(err, message) => {
         res.send(message)
     }) 
@@ -28,7 +28,7 @@ app.get('http://0.0.0.0/messages', (req, res) => {
 })
 
 //Saves a message to the DB
-app.post('http://0.0.0.0/messages', (req, res) => {
+app.post('/messages', (req, res) => {
     var messages = new Message (req.body)
 
     messages.save((err) =>{
