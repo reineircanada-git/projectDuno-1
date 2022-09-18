@@ -62,7 +62,7 @@ function addMessages(message) {
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <p class="card-text">
+                            <p class="card-text text-align justify">
                                 From: ${message.name} <br>
                                 ${message.message} <br>
                             </p>
