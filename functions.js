@@ -54,21 +54,25 @@ function addMessages(message) {
     }
 
     $("#messages").append(`
-        <div class="container">
-            <div class="column">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <img src="${src}" style="width:40px">
-                        <p class="card-text">
-                            From: ${message.name} <br>
-                            ${message.message} <br>
-                        </p>
-                    </div>   
+        <div class = "container">
+            <div class=card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                       <img src="${src}" style="width:100px">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-text">
+                                From: ${message.name} <br>
+                                ${message.message} <br>
+                            </p>
+                        </div>   
+                    </div>
                 </div>
-                <br>
-            </div>
-        </div> 
-    `);
+            </div> 
+            <br>
+        </div>
+        `);
 }//appends messages to messages div
 
 function getMessages() {
