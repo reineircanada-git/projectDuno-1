@@ -21,10 +21,8 @@ var Message = mongoose.model('Message', {
 
 //gets all the messages from the DB
 app.get('/messages', (req, res) => {
+    console.log(req)
     Message.find({motType: { $ne: null }},(err, message) => {
-        if(err){
-            console.log(err)
-        }
         res.send(message)
     }) 
 
