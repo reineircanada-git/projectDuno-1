@@ -22,6 +22,9 @@ var Message = mongoose.model('Message', {
 //gets all the messages from the DB
 app.get('/messages', (req, res) => {
     Message.find({motType: { $ne: null }},(err, message) => {
+        if(err){
+            console.log(err)
+        }
         res.send(message)
     }) 
 
@@ -51,6 +54,6 @@ mongoose.connect(dbUrl, (err) => {
     console.log('mongo db connection', err)
 })
 
-var server = http.listen(process.env.PORT || 5000, () => {
+var server = http.listen(process.env.PORT || 3001, () => {
     console.log('server is listening on port ', server.address().port)
 })
