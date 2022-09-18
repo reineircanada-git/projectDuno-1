@@ -1,4 +1,4 @@
-//var socket = io()
+var socket = io()
 $(() => {
     $("#send").click(() => {
         var message = { name: $("#name").val(), message: $("#message").val(), dateAdded: $("#dateToday").val(), motType: $("input[name='rdbtn']:checked").val()  }
@@ -13,7 +13,7 @@ $(() => {
     getMessages()
 })
 
-//socket.on('message', addMessages)
+socket.on('message', addMessages)
 
 function changePlaceholder() {
     $("#name").prop('disabled', false)
@@ -72,12 +72,13 @@ function addMessages(message) {
 }//appends messages to messages div
 
 function getMessages() {
-    $.get('/messages', (data) => {
+    $.get('http://localhost:3001/messages', (data) => {
         data.forEach(addMessages);
     })
 }
 
 function postMessages(message) {
-    $.post('http://localhost:3001/messages', message)
     console.log(message)
+    $.post('http://localhost:3001/messages', message)
+    
 }
