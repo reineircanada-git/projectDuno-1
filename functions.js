@@ -72,13 +72,13 @@ function addMessages(message) {
 }//appends messages to messages div
 
 function getMessages() {
-    $.get('http://localhost:3001/messages', (data) => {
+    $.get('/messages', (data) => {
         data.forEach(addMessages);
     })
 }
 
 function postMessages(message) {
     console.log(message)
-    $.post('http://localhost:3001/messages', message)
+    $.post('/messages', message)
     
 }
