@@ -7,42 +7,18 @@
     crossorigin="anonymous"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script type="text/javascript" src="functions.js"></script>
+<link rel="stylesheet" href="seeMessage.css"></link>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<br>
+<h3 class='display-3 text-center' id="headline"> Daily Dose of Motivation </h3>
+<br>
 <div class="container">
-    <br>
-    <div class="jumbotron">
-        <h1 class="display-4">Send A Motivation</h1>
-        <br>
-
-        <div class="form-check form-check-inline">
-            <div> Select a Type of Motivation: &nbsp;</div>
-            <input class="form-check-input" type="radio" name="rdbtn" id="msgrqst" value="Message" onchange="changePlaceholder()">
-            <label class="form-check-label" for="msgrqst">Message</label>
-        </div>
-
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="rdbtn" id="sngrqst" value="Song" onchange="changePlaceholder()">
-            <label class="form-check-label" for="sngrqst">Song</label>
-        </div>
-
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="rdbtn" id="tsk" value="Task" onchange="changePlaceholder()">
-            <label class="form-check-label" for="tsk">Task</label>
-        </div>
-        
-        <br>
-        <br>
-        <input id="name" class="form-control" placeholder="Name" disabled>
-        <br>
-        <textarea id="message" class="form-control" placeholder="Choose an Option first" disabled></textarea>
-        <br>
-        <button id="send" class="btn btn-success">Send</button>
-
+    <div id="messages" class="row">
+    
     </div>
-
-    <div class="alert alert-success" role="alert" id="alert" style="display: none">
-    </div>
-
-    <a href="seeMessages.html">See Messages</a>
 </div>
+<br>
+
+
