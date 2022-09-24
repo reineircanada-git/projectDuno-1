@@ -54,25 +54,23 @@ function addMessages(message) {
     }
 
     $("#messages").append(`
-        <div class = "container">
-            <div class=card mb-3">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                       <img src="${src}" style="width:100px">
+        <div class = "col-lg-4 d-flex align-content-stretch">
+            <div class="card testimonial-card mt-2 mb-3 w-100">
+                <div class="card-up aqua-gradient"> </div>
+                    <div class="avatar mx-auto white">
+                        <img src="${src}" class="rounded-circle img-fluid" alt="icon">
                     </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <p class="card-text text-align justify">
-                                From: ${message.name} <br>
-                                ${message.message} <br>
-                            </p>
-                        </div>   
+                    <div class="card-body text-center">
+                        <h4 class="card-title font-weight-bold">${message.name} </h4>
+                        <hr>
+                        <div> <p><i class="fas fa-quote-left"></i> ${message.message}</p> <div>
                     </div>
                 </div>
-            </div> 
-            <br>
+            </div>
         </div>
-        `);
+
+    
+    `);
 }//appends messages to messages div
 
 function getMessages() {
@@ -86,3 +84,7 @@ function postMessages(message) {
     $.post('/messages', message)
     
 }
+
+$(document).on("click", ".flip-container", function () {
+    $(this).toggleClass('hover');
+});
